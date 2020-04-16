@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+        #map {
+            height: 80%;
+            width: 80%;
+            margin: 50px auto;
+        }
+
+        /* Optional: Makes the sample page fill the window. */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .prompt {
+            padding: 5px;
+            display: none;
+            font-size: 17px;
+            transition: .4s ease all;
+            position: absolute;
+            width: 223px;
+            background-color: white;
+
+        }
+
+        .prompt:hover {
+
+            cursor: pointer;
+            background-color: rgba(113, 174, 243, 0.596);
+        }
+
+        .prompt--active {
+            display: block;
+        }
+
+        .from-block {
+            display: inline-block;
+            position: relative;
+        }
+
+        #map-form {
+            margin: 80px auto;
+            text-align: center;
+        }
+
+        .info-text {
+            color: rgba(113, 174, 243, 0.829);
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        [type="text"] {
+            padding-left: 10px;
+            font-size: 20px;
+            height: 40px;
+            width: 220px;
+            border: 1px solid rgba(113, 174, 243, 0.596);
+            border-radius: 2px;
+        }
+
+        [type="text"]:focus {
+            outline: none;
+        }
+
+        #info-button {
+            transition: .5s all ease-in;
+            margin-left: 20px;
+            font-weight: bold;
+            font-size: 16px;
+            background-color: transparent;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            border: 3px rgba(113, 174, 243, 0.596) dashed;
+        }
+
+        #info-button:hover {
+            cursor: pointer;
+            transform: scale(1.1, 1.1);
+            border: solid 3px rgba(113, 174, 243, 0.596);
+        }
+
+        #info-button:focus {
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map-form">
+        <div class="from-block">
+            <input type="text" name="from" id="from" placeholder="Start...">
+            <div class="prompt" id="fromPrompt"></div>
+        </div>
+
+        <div class="from-block">
+            <input type="text" name="to" id="to" placeholder="Finish...">
+            <div class="prompt" id="toPrompt"></div>
+        </div>
+        <button id="info-button"><span class="span">Get info!</span></button>
+        <div id="info"></div>
+    </div>
+    <div id="map">
+
+
+
+    </div>
+
+
+    <script src="js.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3L-WUH-BdPPReCSLzX4nA5yIs4zwd92g&callback=initMap"
+        async defer></script>
+</body>
+
+</html>
